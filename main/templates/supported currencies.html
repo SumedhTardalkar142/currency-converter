@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block start %}
+
+<div class="container">
+    <h1>Supported Currencies</h1><br><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Currency Code</th>
+                <th>Country Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for code, country in currency_to_country.items %}
+            <tr>
+                <td>{{ code }}</td>
+                <td>{{ country }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<br>
+<div style="margin-left: 22%; margin-right: auto;">
+    <p><h6>
+      <p style="opacity: 80%;">Unsupported Currencies</p>
+      <p style="opacity: 80%;">There is only 1 widely known currency we don't offer exchange rate data for due to sanctions & lack of any international trade.</p>
+      <p style="opacity: 80%;">Currency Code : KPW | Currency Name : North Korean 'Won' | Country : Korea</p>
+    </h6></p>
+</div>
+
+{% endblock %}
